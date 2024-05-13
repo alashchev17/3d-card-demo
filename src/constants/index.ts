@@ -4,6 +4,12 @@ type TextureEntity = {
   texture: string
 }
 
+type ImageEntity = {
+  id: number
+  name: string
+  image: string
+}
+
 export const texturesArray: TextureEntity[] = [
   {
     id: 1,
@@ -17,7 +23,15 @@ export const texturesArray: TextureEntity[] = [
   },
   {
     id: 3,
-    name: 'Glass Texture',
-    texture: '/assets/textures/glassTexture.jpg',
+    name: 'Glossy Texture',
+    texture: '/assets/textures/glossyTexture.jpg',
+  },
+]
+
+export const imagesArray: ImageEntity[] = [
+  {
+    id: 1,
+    name: '0to9',
+    image: '/assets/images/0to9.png',
   },
 ]
