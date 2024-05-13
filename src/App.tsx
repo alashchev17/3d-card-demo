@@ -7,8 +7,10 @@ import { SettingsProvider } from './context/SettingsContext'
 const App = () => {
   return (
     <SettingsProvider>
+      <div className="layout">
       <SettingsContainer />
       <Model />
+      </div>
     </SettingsProvider>
   )
 }

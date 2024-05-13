@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import Lights from './Lights'
-import { OrbitControls, useTexture } from '@react-three/drei'
-import { useThree, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import { useThree, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
 import TextInsideModel from './TextInsideModel'
 import { useSettings } from '../context/SettingsContext'
@@ -9,18 +9,12 @@ import { useSettings } from '../context/SettingsContext'
 const ModelView = () => {
   const meshRef = useRef<THREE.Mesh>(null!)
   const { currentTexture } = useSettings()
-  const texture = useTexture(currentTexture)
   const { scene } = useThree()
   scene.background = new THREE.Color('#e3e3e3')
+  const texture = useLoader(THREE.TextureLoader, currentTexture)
 
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      const material = meshRef.current.material as THREE.ShaderMaterial
-      if (material instanceof THREE.ShaderMaterial) {
-        material.uniforms.time.value = clock.elapsedTime
-      }
-    }
-  })
+  console.log(texture)
+
   return (
     <>
       <Lights />

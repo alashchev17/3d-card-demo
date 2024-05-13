@@ -30,7 +30,7 @@ const TextInsideModel = ({ text, position }: TextInsideModelProps) => {
         curveSegments: 12,
         bevelEnabled: false,
       })
-      const textMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 })
+      const textMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 })
       const textMesh = new THREE.Mesh(textGeometry, textMaterial)
       const textWidth = new THREE.Box3().setFromObject(textMesh).getSize(new THREE.Vector3()).x
       textMesh.position.copy(position).add(new THREE.Vector3(-textWidth / 2, 0, 0))
