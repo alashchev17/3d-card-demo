@@ -34,4 +34,9 @@ export const imagesArray: ImageEntity[] = [
     name: '0to9',
     image: '/assets/images/0to9.png',
   },
+  {
+    id: 2,
+    name: 'Oles Gergun',
+    image: '/assets/images/Oles-Gergun.png',
+  },
 ]

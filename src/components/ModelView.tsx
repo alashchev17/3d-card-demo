@@ -23,11 +23,11 @@ const ModelView = () => {
       <gridHelper args={[10000, 1000]} />
       <group>
         <mesh ref={meshImageRef}>
-          {/* геометрия картинки пользователя */}
+          {/* User's Image Geometry */}
           <boxGeometry args={[85, 55, 0.38]} />
           <meshStandardMaterial map={imageMaterial} roughness={1} metalness={0} alphaTest={0.25} transparent={true} />
         </mesh>
-        {/* геометрия текстуры пользователя */}
+        {/* User's Texture Geometry */}
         <mesh ref={meshTextureRef}>
           <boxGeometry args={[85, 55, 0.36]} />
           <meshStandardMaterial map={textureMaterial} roughness={1} metalness={0} roughnessMap={textureMaterial} />
